@@ -46,3 +46,11 @@ title: Important Defaults
 - <span title="React Query as a State Manager">[React Query as a State Manager](../../community/tkdodos-blog.md#10-react-query-as-a-state-manager)</span>
 
 [//]: # 'Materials'
+
+## 요약
+
+- TanStack Query는 기본적으로 데이터를 공격적으로 stale로 간주하고, refetch를 자주 트리거합니다.
+- staleTime, gcTime, retry, structuralSharing 등 주요 옵션을 통해 쿼리의 신선도, 캐싱, 에러 처리, 성능을 세밀하게 제어할 수 있습니다.
+- 쿼리는 네트워크/포커스/마운트 등 다양한 시점에 자동으로 refetch되며, 필요에 따라 refetchOnMount, refetchOnWindowFocus, refetchOnReconnect 등으로 커스터마이즈할 수 있습니다.
+- 쿼리의 비활성 상태, 가비지 컬렉션, 구조적 공유 등은 메모리 관리와 성능 최적화에 중요한 역할을 합니다.
+- 대부분의 기본값은 실전에서 안전하고 효율적이지만, 앱의 특성에 맞게 옵션을 조정하는 것이 중요합니다.
