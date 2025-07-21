@@ -7,7 +7,9 @@ title: Overview
 
 ## <span title="동기">Motivation</span>
 
-<span title="대부분의 핵심 웹 프레임워크는 데이터 패칭이나 업데이트에 대해 일관된 방식을 제공하지 않습니다. 그래서 개발자들은 데이터 패칭에 대해 엄격한 의견을 가진 메타 프레임워크를 만들거나, 각자만의 데이터 패칭 방식을 고안하게 됩니다. 이는 보통 컴포넌트 기반 상태와 부수효과를 조합하거나, 비동기 데이터를 앱 전체에 제공하기 위해 범용 상태 관리 라이브러리를 사용하는 것으로 이어집니다.">Most core web frameworks **do not** come with an opinionated way of fetching or updating data in a holistic way. Because of this developers end up building either meta-frameworks which encapsulate strict opinions about data-fetching, or they invent their own ways of fetching data. This usually means cobbling together component-based state and side-effects, or using more general purpose state management libraries to store and provide asynchronous data throughout their apps.</span>
+<span title="대부분의 핵심 웹 프레임워크는 데이터 패칭이나 업데이트에 대해 일관된 방식을 제공하지 않습니다. 그래서 개발자들은 데이터 패칭에 대해 엄격한 의견을 가진 메타 프레임워크를 만들거나, 각자만의 데이터 패칭 방식을 고안하게 됩니다.">Most core web frameworks **do not** come with an opinionated way of fetching or updating data in a holistic way. Because of this developers end up building either meta-frameworks which encapsulate strict opinions about data-fetching, or they invent their own ways of fetching data. 
+</span>
+<span title="이는 보통 컴포넌트 기반 상태와 부수효과를 조합하거나, 비동기 데이터를 앱 전체에 제공하기 위해 범용 상태 관리 라이브러리를 사용하는 것으로 이어집니다.">This usually means cobbling together component-based state and side-effects, or using more general purpose state management libraries to store and provide asynchronous data throughout their apps.</span>
 
 <span title="대부분의 전통적인 상태 관리 라이브러리는 클라이언트 상태 관리에는 훌륭하지만, 비동기나 서버 상태 관리에는 그다지 적합하지 않습니다. 서버 상태는 완전히 다르기 때문입니다. 예를 들어, 서버 상태는:">While most traditional state management libraries are great for working with client state, they are **not so great at working with async or server state**. This is because **server state is totally different**. For starters, server state:</span>
 
@@ -107,3 +109,6 @@ function Example() {
 - 캐싱, 중복 요청 제거, 백그라운드 업데이트, 데이터 최신성 판단, 성능 최적화, 메모리 관리 등 서버 상태 관리의 주요 과제를 효과적으로 해결할 수 있습니다.
 - TanStack Query를 사용하면 복잡한 코드와 상태 관리 로직을 크게 줄이고, 유지보수성과 확장성을 높일 수 있습니다.
 - 기본 설정만으로도 강력하게 동작하며, 필요에 따라 다양한 옵션과 커스터마이즈가 가능합니다.
+
+## 탐구과제
+- structural sharing
