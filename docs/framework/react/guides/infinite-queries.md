@@ -257,3 +257,12 @@ return useInfiniteQuery({
 ```
 
 [//]: # 'Example9'
+
+## 요약
+
+- useInfiniteQuery는 무한 스크롤/더보기 UI를 위한 전용 훅으로, pages와 pageParams 구조로 데이터를 관리합니다.
+- fetchNextPage, fetchPreviousPage, hasNextPage, hasPreviousPage 등 다양한 페이징 관련 API를 제공합니다.
+- getNextPageParam/getPreviousPageParam 옵션으로 다음/이전 페이지의 기준값을 동적으로 지정할 수 있습니다.
+- 동시에 여러 fetch가 발생하면 데이터가 덮어써질 수 있으므로, isFetching 상태를 체크해 중복 호출을 방지해야 합니다.
+- maxPages 옵션을 활용하면 메모리/네트워크 사용량을 제한할 수 있고, 커서가 없는 API도 pageParam을 활용해 무한 쿼리를 구현할 수 있습니다.
+- 수동 데이터 조작 시에도 pages/pageParams 구조를 반드시 유지해야 합니다.

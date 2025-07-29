@@ -173,3 +173,12 @@ const result = useQuery({
 For a comparison between `Initial Data` and `Placeholder Data`, have a look at the [Community Resources](../../community/tkdodos-blog.md#9-placeholder-and-initial-data-in-react-query).
 
 [//]: # 'Materials'
+
+## 요약
+
+- 쿼리의 초기 데이터는 initialData 옵션, prefetchQuery, setQueryData 등 다양한 방법으로 미리 캐시에 넣을 수 있습니다.
+- initialData는 쿼리 캐시에 실제로 저장되므로, 임시/불완전 데이터는 placeholderData로 처리하는 것이 권장됩니다.
+- initialData를 사용하면 쿼리 mount 시 로딩 없이 바로 데이터를 보여줄 수 있으며, staleTime/initialDataUpdatedAt 옵션으로 freshness를 세밀하게 제어할 수 있습니다.
+- initialData에 함수를 넘기면 최초 1회만 실행되어 메모리/성능 최적화에 유리합니다.
+- 다른 쿼리의 캐시 데이터를 initialData로 활용할 때는 dataUpdatedAt을 함께 전달해 신선도 기준을 맞추는 것이 좋습니다.
+- 조건부로 캐시 데이터를 사용할 때는 getQueryState로 데이터의 freshness를 직접 판단해 활용할 수 있습니다.

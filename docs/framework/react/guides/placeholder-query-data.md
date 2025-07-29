@@ -99,3 +99,12 @@ function Todo({ blogPostId }) {
 For a comparison between `Placeholder Data` and `Initial Data`, have a look at the [Community Resources](../../community/tkdodos-blog.md#9-placeholder-and-initial-data-in-react-query).
 
 [//]: # 'Materials'
+
+## 요약
+
+- placeholderData는 쿼리의 초기 데이터처럼 동작하지만, 실제 캐시에 저장되지 않고 임시로만 사용됩니다.
+- 부분 데이터, 프리뷰, 페이크 데이터 등 실제 데이터가 오기 전 UI를 빠르게 렌더링할 때 유용합니다.
+- placeholderData는 값, 함수, 캐시 참조 등 다양한 방식으로 지정할 수 있으며, isPlaceholderData 플래그로 구분할 수 있습니다.
+- 함수형 placeholderData를 활용하면 이전 쿼리의 데이터를 활용해 페이지 전환 시 로딩 스피너 없이 자연스러운 UX를 구현할 수 있습니다.
+- 캐시에서 데이터를 가져와 placeholder로 활용할 때는, 실제 데이터가 오면 자동으로 대체됩니다.
+- placeholderData와 initialData의 차이점은, placeholderData는 임시/프리뷰 용도이고, initialData는 실제 캐시에 저장된다는 점입니다.

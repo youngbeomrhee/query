@@ -91,3 +91,11 @@ function Todos() {
 ## Lagging Infinite Query results with `placeholderData`
 
 While not as common, the `placeholderData` option also works flawlessly with the `useInfiniteQuery` hook, so you can seamlessly allow your users to continue to see cached data while infinite query keys change over time.
+
+## 요약
+
+- 페이지네이션 쿼리는 queryKey에 page 정보를 포함시켜 구현하며, 기본적으로 각 페이지마다 별도의 쿼리로 동작합니다.
+- 단순 구현 시 페이지 전환마다 UI가 success/pending 상태로 깜빡일 수 있습니다.
+- placeholderData(혹은 keepPreviousData)를 활용하면 이전 페이지 데이터를 새 데이터가 도착할 때까지 유지할 수 있어, 부드러운 UX를 제공합니다.
+- isPlaceholderData 플래그로 현재 데이터가 임시 데이터인지 구분할 수 있습니다.
+- 이 패턴은 useQuery뿐 아니라 useInfiniteQuery에도 동일하게 적용할 수 있습니다.

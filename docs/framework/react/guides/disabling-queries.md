@@ -126,3 +126,11 @@ function Todos() {
 ```
 
 [//]: # 'Example3'
+
+## 요약
+
+- enabled: false 옵션을 사용하면 쿼리의 자동 실행을 완전히 비활성화할 수 있으며, refetch로만 수동 실행이 가능합니다.
+- enabled는 동적 조건(예: 입력값 유무)에 따라 쿼리 활성/비활성 제어에도 활용할 수 있습니다.
+- 비활성 쿼리는 mount/refetch/invalidations 등 모든 자동 동작에서 제외되며, imperative(명령형) 방식으로만 fetch가 가능합니다.
+- TypeScript 환경에서는 skipToken을 활용해 타입 안전하게 쿼리를 비활성화할 수 있습니다.
+- lazy query(지연 쿼리) 패턴에서는 isLoading 대신 isPending, isFetching 조합을 활용해 로딩 상태를 세밀하게 제어할 수 있습니다.
