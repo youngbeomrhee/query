@@ -260,9 +260,13 @@ return useInfiniteQuery({
 
 ## 요약
 
-- useInfiniteQuery는 무한 스크롤/더보기 UI를 위한 전용 훅으로, pages와 pageParams 구조로 데이터를 관리합니다.
-- fetchNextPage, fetchPreviousPage, hasNextPage, hasPreviousPage 등 다양한 페이징 관련 API를 제공합니다.
-- getNextPageParam/getPreviousPageParam 옵션으로 다음/이전 페이지의 기준값을 동적으로 지정할 수 있습니다.
-- 동시에 여러 fetch가 발생하면 데이터가 덮어써질 수 있으므로, isFetching 상태를 체크해 중복 호출을 방지해야 합니다.
-- maxPages 옵션을 활용하면 메모리/네트워크 사용량을 제한할 수 있고, 커서가 없는 API도 pageParam을 활용해 무한 쿼리를 구현할 수 있습니다.
-- 수동 데이터 조작 시에도 pages/pageParams 구조를 반드시 유지해야 합니다.
+TanStack Query의 `useInfiniteQuery`는 무한 스크롤과 같은 UI 패턴을 지원합니다. 주요 기능은 다음과 같습니다:
+
+- `data` 객체는 `pages`와 `pageParams` 배열을 포함하여 무한 쿼리 데이터를 관리합니다.
+- `fetchNextPage`와 `fetchPreviousPage` 함수를 통해 다음 및 이전 페이지를 가져올 수 있습니다.
+- `initialPageParam` 옵션을 사용하여 초기 페이지 매개변수를 설정합니다.
+- `getNextPageParam`과 `getPreviousPageParam` 옵션을 통해 추가 데이터를 로드할 수 있는지 여부와 필요한 정보를 결정합니다.
+- `hasNextPage`와 `hasPreviousPage` 불리언 값은 다음 또는 이전 페이지가 있는지 여부를 나타냅니다.
+- `isFetchingNextPage`와 `isFetchingPreviousPage`는 백그라운드 새로 고침 상태와 더 많은 데이터를 로드하는 상태를 구분합니다.
+
+무한 쿼리가 `stale` 상태가 되면 각 그룹이 순차적으로 다시 가져와지며, 쿼리 캐시에서 제거되면 페이지네이션이 초기 상태로 재시작됩니다. 양방향 리스트, 페이지 순서 반전, 수동 업데이트, 페이지 수 제한 등의 다양한 기능을 지원합니다.

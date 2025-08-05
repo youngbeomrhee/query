@@ -94,8 +94,10 @@ While not as common, the `placeholderData` option also works flawlessly with the
 
 ## 요약
 
-- 페이지네이션 쿼리는 queryKey에 page 정보를 포함시켜 구현하며, 기본적으로 각 페이지마다 별도의 쿼리로 동작합니다.
-- 단순 구현 시 페이지 전환마다 UI가 success/pending 상태로 깜빡일 수 있습니다.
-- placeholderData(혹은 keepPreviousData)를 활용하면 이전 페이지 데이터를 새 데이터가 도착할 때까지 유지할 수 있어, 부드러운 UX를 제공합니다.
-- isPlaceholderData 플래그로 현재 데이터가 임시 데이터인지 구분할 수 있습니다.
-- 이 패턴은 useQuery뿐 아니라 useInfiniteQuery에도 동일하게 적용할 수 있습니다.
+TanStack Query는 페이지네이션된 데이터를 렌더링할 때, 쿼리 키에 페이지 정보를 포함시켜 간단하게 처리할 수 있습니다. 그러나 각 페이지가 새로운 쿼리로 처리되기 때문에 UI가 `success`와 `pending` 상태를 반복적으로 전환할 수 있습니다. 이를 해결하기 위해 `placeholderData`를 사용하여 다음과 같은 이점을 얻을 수 있습니다:
+
+- 마지막으로 성공한 데이터가 새로운 데이터를 요청하는 동안에도 사용 가능합니다.
+- 새로운 데이터가 도착하면 이전 데이터가 매끄럽게 교체됩니다.
+- `isPlaceholderData`를 통해 현재 제공되는 데이터의 상태를 알 수 있습니다.
+
+또한, `placeholderData`는 `useInfiniteQuery` 훅과도 잘 작동하여, 무한 스크롤 쿼리 키가 시간에 따라 변경될 때도 사용자가 캐시된 데이터를 계속 볼 수 있도록 합니다.
